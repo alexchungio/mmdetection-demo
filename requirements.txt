@@ -1,0 +1,5 @@
+cython
+matplotlib
+opencv-python
+numpy==1.19.5
+tqdm==4.55.1
