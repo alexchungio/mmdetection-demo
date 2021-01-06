@@ -26,8 +26,8 @@ def main():
     #     '--score-thr', type=float, default=0.3, help='bbox score threshold')
     # args = parser.parse_args()
 
-    config = './configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py'
-    checkpoint = './checkpoints/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth'
+    config = './configs/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco.py'
+    checkpoint = './checkpoints/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
     device = 'cuda:0'
     image = './docs/demo/demo.jpg'
     score_thr = 0.3
