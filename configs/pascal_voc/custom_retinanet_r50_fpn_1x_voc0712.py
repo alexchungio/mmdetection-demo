@@ -126,7 +126,12 @@ optimizer_config = dict(grad_clip=None)
 # actual epoch = 3 * 3 = 9
 
 ############################ lr config ############################
-lr_config = dict(policy='step', step=[])
+lr_config = dict(policy='step',
+                 warmup='linear',
+                 warmup_iters=12000,  # The number of iterations for warmup
+                 warmup_ratio= 0.001,  # The ratio of the starting learning rate used for warmup
+                 step=[8, 10]
+                 )
 
 ############################ runtime setting ############################
 total_epochs = 12  # actual epoch = 4 * 3 = 12
