@@ -1,33 +1,34 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #------------------------------------------------------
-# @ File       : test.py
+# @ File       : voc_test.py
 # @ Description:  
 # @ Author     : Alex Chung
 # @ Contact    : yonganzhong@outlook.com
 # @ License    : Copyright (c) 2017-2018
-# @ Time       : 2021/1/6 下午8:03
+# @ Time       : 2021/1/7 下午3:14
 # @ Software   : PyCharm
 #-------------------------------------------------------
 
+
 import os.path as osp
 import mmcv
+from mmcv import Config
 
 from mmdet.datasets import build_dataset
 from mmdet.apis import init_detector, inference_detector, show_result_pyplot
 
-from kitti_config import update_config
-
-cfg = update_config()
-
-dataset = [build_dataset(cfg.data.train)]
 
 def test():
-    checkpoint = osp.join(cfg.work_dir, 'epoch_12.pth')
-    img = mmcv.imread(osp.join('./data/kitti_tiny/training/image_2', '000068.jpeg'))
+
+    config = './configs/pascal_voc/custom_retinanet_r50_fpn_1x_voc0712.py'
+    cfg = Config.fromfile(config)
+    checkpoint = osp.join(cfg.work_dir, 'epoch_1.pth')
+    img = mmcv.imread(osp.join('./docs/demo', 'demo_1.jpg'))
 
     model = init_detector(config=cfg, checkpoint=checkpoint, device='cuda:0')
 
+    dataset = [build_dataset(cfg.data.train)]
     # Add an attribute for visualization convenience
     model.CLASSES = dataset[0].CLASSES
 

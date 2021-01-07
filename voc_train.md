@@ -20,7 +20,7 @@ vim config/pascal_voc/reninanet_r50_fpn_1x_voc0712.py
     
 ## Train
 ```shell script
-python python voc_train.py  --config ../configs/pascal_voc/custom_retinanet_r50_fpn_1x_voc0712.py
+python voc_train.py  --config ./configs/pascal_voc/custom_retinanet_r50_fpn_1x_voc0712.py
 ```
 
 ## Test
