@@ -29,7 +29,7 @@ def main():
     config = './configs/mask_rcnn/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco.py'
     checkpoint = './checkpoints/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
     device = 'cuda:0'
-    image = './docs/demo/demo.jpg'
+    image = './docs/demo/demo_0.jpg'
     score_thr = 0.3
 
     # build the model from a config file and a checkpoint file

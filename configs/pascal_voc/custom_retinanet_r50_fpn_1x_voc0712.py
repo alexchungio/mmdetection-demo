@@ -130,7 +130,7 @@ lr_config = dict(policy='step',
                  warmup='linear',
                  warmup_iters=12000,  # The number of iterations for warmup
                  warmup_ratio= 0.001,  # The ratio of the starting learning rate used for warmup
-                 step=[8, 10]
+                 step=[8, 11]
                  )
 
 ############################ runtime setting ############################
