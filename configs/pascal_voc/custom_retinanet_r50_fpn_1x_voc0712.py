@@ -92,8 +92,9 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    samples_per_gpu=2,
-    workers_per_gpu=2,
+    # imgs_per_gpu=2
+    samples_per_gpu=2, # Batch size of a single GPU
+    workers_per_gpu=2, # # Worker to pre-fetch data for each single GPU
     train=dict(
         type='RepeatDataset',
         times=3,
@@ -125,10 +126,10 @@ optimizer_config = dict(grad_clip=None)
 # actual epoch = 3 * 3 = 9
 
 ############################ lr config ############################
-lr_config = dict(policy='step', step=[3])
+lr_config = dict(policy='step', step=[])
 
 ############################ runtime setting ############################
-total_epochs = 4  # actual epoch = 4 * 3 = 12
+total_epochs = 12  # actual epoch = 4 * 3 = 12
 
 checkpoint_config = dict(interval=1)
 # yapf:disable

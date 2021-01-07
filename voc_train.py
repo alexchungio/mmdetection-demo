@@ -1,3 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#------------------------------------------------------
+# @ File       : voc_train.py
+# @ Description:  
+# @ Author     : Alex Chung
+# @ Contact    : yonganzhong@outlook.com
+# @ License    : Copyright (c) 2017-2018
+# @ Time       : 2021/1/7 下午4:26
+# @ Software   : PyCharm
+#-------------------------------------------------------
+
 import argparse
 import copy
 import os
@@ -20,7 +32,7 @@ from mmdet.utils import collect_env, get_root_logger
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
-    parser.add_argument('config', help='train config file path')
+    parser.add_argument('--config', help='train config file path')
     parser.add_argument('--work-dir', help='the dir to save logs and models')
     parser.add_argument(
         '--resume-from', help='the checkpoint file to resume from')
