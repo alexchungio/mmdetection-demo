@@ -1,6 +1,4 @@
-# mmdetection-voc
-pascal voc object detect
-
+# mmdetection-demo
 
 ## install and compile
 1. Create a conda virtual environment and activate it.
