@@ -23,7 +23,7 @@ def test():
 
     config = './configs/pascal_voc/custom_retinanet_r50_fpn_1x_voc0712.py'
     cfg = Config.fromfile(config)
-    checkpoint = osp.join(cfg.work_dir, 'epoch_1.pth')
+    checkpoint = osp.join(cfg.work_dir, 'latest.pth')
     img = mmcv.imread(osp.join('./docs/demo', 'demo_1.jpg'))
 
     model = init_detector(config=cfg, checkpoint=checkpoint, device='cuda:0')
