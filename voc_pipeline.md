@@ -26,13 +26,18 @@ python voc_train.py  --config ./configs/pascal_voc/custom_retinanet_r50_fpn_1x_v
 python voc_test.py
 ```
 
-## View logs
+## Visual
 
+### logs
 ```shell script
+pip install seaborn
 python tools/analyze_logs.py plot_curve ./outputs/retinanet_r50_fpn/20210107_171450.log.json --keys loss_cls loss_bbox loss --out losses.pdf --legend cls_loss bbox_loss total_loss --title loss
-
 ```
-
+### tensorboard 
+```shell script
+pip install future tensorboard
+tensorboard --logdir=./
+```
 ## TODO
 
 
