@@ -14,7 +14,8 @@ from mmcv import Config
 from mmdet.apis import set_random_seed
 
 cfg = Config.fromfile('./configs/faster_rcnn/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco.py')
-
+# cfg = Config.fromfile('./configs/kitti/cascade_r50_fpn_1x.py')
+print(cfg.model.roi_head)
 def update_config():
     # Modify dataset type and path
     cfg.dataset_type = 'KittiTinyDataset'
@@ -37,12 +38,16 @@ def update_config():
 
     # modify num classes of the model in box head
     cfg.model.roi_head.bbox_head.num_classes = 3
+    # cfg.model.roi_head.bbox_head[0].num_classes = 3
+    # cfg.model.roi_head.bbox_head[1].num_classes = 3
+    # cfg.model.roi_head.bbox_head[2].num_classes = 3
+
     # We can still use the pre-trained Mask RCNN model though we do not need to
     # use the mask branch
     cfg.load_from = 'checkpoints/mask_rcnn_r50_caffe_fpn_mstrain-poly_3x_coco_bbox_mAP-0.408__segm_mAP-0.37_20200504_163245-42aa3d00.pth'
 
     # Set up working dir to save files and logs.
-    cfg.work_dir = './outputs'
+    cfg.work_dir = './outputs/kitti'
 
     # The original learning rate (LR) is set for 8-GPU training.
     # We divide it by 8 since we only use one GPU.

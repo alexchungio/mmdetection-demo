@@ -98,15 +98,16 @@
     ```
     
 ### Config
-    kitti_config.py
+    python kitti_config.py
     
 ### training
     
-    kitti_train.py
+    pytbhon kitti_train.py
+ 
+    python ./tools/train.py  ./configs/kitti/cascade_r50_fpn_1x.py
    
 ## Test 
     kitti_test.py
-    
     
 ## TODO
 
