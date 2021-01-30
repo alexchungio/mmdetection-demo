@@ -9,7 +9,7 @@
 
 2. Install PyTorch and torchvision
 
-     ```shell script
+     ```
      conda install pytorch torchvision -c pytorch
     ```
 
@@ -17,7 +17,7 @@
     You can check the supported CUDA version for precompiled packages on the [PyTorch website](https://pytorch.org/).
 
     `E.g` If you have CUDA 10.0 installed under `/usr/local/cuda` 
-     ```shell script
+     ```
      nvcc --version
     ````
 
@@ -98,16 +98,24 @@
     ```
     
 ### Config
-    python kitti_config.py
+```shell script
+python kitti/kitti_config.py
+```
     
 ### training
-    
-    pytbhon kitti_train.py
+
+* method 1
+```shell script
+pytbon kitti/kitti_train.py
  
-    python ./tools/train.py  ./configs/kitti/cascade_r50_fpn_1x.py
+```
+* method 2
+```shell script
+python tools/train.py  configs/kitti/cascade_r50_fpn_1x.py
+```
    
 ## Test 
-    kitti_test.py
+python voc
     
 ## TODO
 

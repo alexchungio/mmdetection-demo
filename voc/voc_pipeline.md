@@ -17,13 +17,14 @@ vim config/pascal_voc/reninanet_r50_fpn_1x_voc0712.py
 ```
 
 ## Train
+
 ```shell script
-python voc_train.py  --config ./configs/pascal_voc/custom_retinanet_r50_fpn_1x_voc0712.py
+python voc/voc_train.py  --config ./configs/pascal_voc/custom_retinanet_r50_fpn_1x_voc0712.py
 ```
 
 ## Test
 ```shell script
-python voc_test.py
+python voc/voc_test.py
 ```
 
 ## Visual
